@@ -16,6 +16,8 @@ namespace Plugin\SiteKit\Controller\Admin;
 use Eccube\Controller\AbstractController;
 use Eccube\Entity\Member;
 use Eccube\Repository\BaseInfoRepository;
+use Eccube\Service\SystemService;
+use Eccube\Util\CacheUtil;
 use Eccube\Util\StringUtil;
 use Google_Service_SiteVerification;
 use Google_Service_Webmasters;
@@ -24,14 +26,16 @@ use Plugin\SiteKit\Entity\IdToken;
 use Plugin\SiteKit\Repository\IdTokenRepository;
 use Plugin\SiteKit\Service\Google_Site_Kit_Client;
 use Plugin\SiteKit\Service\Google_Site_Kit_Proxy_Client;
-use Plugin\SiteKit\Service\SiteKitClientFactory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Yaml\Yaml;
 
 class ConfigController extends AbstractController
 {
@@ -114,20 +118,22 @@ class ConfigController extends AbstractController
     {
     }
 
-    /**
-     * @Route("/google{token}.html")
-     */
-    public function siteVerification(string $token)
+    public function siteVerification()
     {
-        $verificationToken = file_get_contents($this->eccubeConfig['plugin_data_realdir'].'/SiteKit/google-site-verification.txt');
-        return new Response($verificationToken);
+        $file = $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/google-site-verification.txt';
+        if (file_exists($file)) {
+            $verificationToken = file_get_contents($file);
+            return new Response($verificationToken);
+        }
+
+        throw new NotFoundHttpException();
     }
 
     /**
      * @Route("/%eccube_admin_route%/cube_kit/action_callback", name="site_kit_action_callback", methods={"GET"})
      * @Route("/cube_kit/action_callback", methods={"GET"})
      */
-    public function actionCallback(Request $request)
+    public function actionCallback(Request $request, CacheUtil $cacheUtil, SystemService $systemService, RouterInterface $router)
     {
         $nonce = $this->session->get(self::SESSION_KEY_SITE_KIT_NONCE);
         if ($nonce !== $request->get('nonce')) {
@@ -142,6 +148,25 @@ class ConfigController extends AbstractController
                     $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/google-site-verification.txt',
                     'google-site-verification: '.$token
                 );
+
+                $systemService->switchMaintenance(true);
+
+                // ルーティング生成
+                $yaml = Yaml::dump([
+                    'site_kit_google_site_verification' => [
+                        'path' => '/google'.$token.'.html',
+                        'controller' => 'Plugin\SiteKit\Controller\Admin\ConfigController::siteVerification',
+                    ]
+                ]);
+                $filesystem->dumpFile(
+                    $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/routes.yaml',
+                    $yaml);
+
+                $cacheUtil->clearCache();
+
+                // sitekit.withgoogle.comへリダイレクトするため、画面描画後のメンテナンス解除ができない。
+                // 従来のEventでのメンテナンス解除を行う
+                $systemService->disableMaintenance();
             }
 
             $params = http_build_query([
