@@ -154,7 +154,7 @@ class ConfigController extends AbstractController
                 // ルーティング生成
                 $yaml = Yaml::dump([
                     'site_kit_google_site_verification' => [
-                        'path' => '/google'.$token.'.html',
+                        'path' => '/'.$token,
                         'controller' => 'Plugin\SiteKit\Controller\Admin\ConfigController::siteVerification',
                     ]
                 ]);
