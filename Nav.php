@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit;
+namespace Plugin\SiteKit42;
 
 use Eccube\Common\EccubeNav;
 

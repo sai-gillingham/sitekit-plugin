@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Controller\Admin;
+namespace Plugin\SiteKit42\Controller\Admin;
 
 use Eccube\Controller\AbstractController;
 use Eccube\Entity\Member;
@@ -22,10 +22,10 @@ use Eccube\Util\StringUtil;
 use Google_Service_SiteVerification;
 use Google_Service_Webmasters;
 use GuzzleHttp\Client;
-use Plugin\SiteKit\Entity\IdToken;
-use Plugin\SiteKit\Repository\IdTokenRepository;
-use Plugin\SiteKit\Service\Google_Site_Kit_Client;
-use Plugin\SiteKit\Service\Google_Site_Kit_Proxy_Client;
+use Plugin\SiteKit42\Entity\IdToken;
+use Plugin\SiteKit42\Repository\IdTokenRepository;
+use Plugin\SiteKit42\Service\Google_Site_Kit_Client;
+use Plugin\SiteKit42\Service\Google_Site_Kit_Proxy_Client;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,8 +66,8 @@ class ConfigController extends AbstractController
     }
 
     /**
-     * @Route("/%eccube_admin_route%/site_kit/config", name="site_kit_admin_config")
-     * @Template("@SiteKit/admin/config.twig")
+     * @Route("/%eccube_admin_route%/site_kit/config", name="site_kit42_admin_config")
+     * @Template("@SiteKit42/admin/config.twig")
      */
     public function index(Request $request)
     {
@@ -86,7 +86,7 @@ class ConfigController extends AbstractController
                 [],
                 UrlGeneratorInterface::ABSOLUTE_URL),
             'return_uri' => $this->generateUrl(
-                'site_kit_admin_config',
+                'site_kit42_admin_config',
                 [],
                 UrlGeneratorInterface::ABSOLUTE_URL),
             'analytics_redirect_uri' => $this->generateUrl(
@@ -120,7 +120,7 @@ class ConfigController extends AbstractController
 
     public function siteVerification()
     {
-        $file = $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/google-site-verification.txt';
+        $file = $this->eccubeConfig['plugin_data_realdir'].'/SiteKit42/google-site-verification.txt';
         if (file_exists($file)) {
             $verificationToken = file_get_contents($file);
             return new Response($verificationToken);
@@ -145,7 +145,7 @@ class ConfigController extends AbstractController
                 $token = $request->get('googlesitekit_verification_token');
                 $filesystem = new Filesystem();
                 $filesystem->dumpFile(
-                    $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/google-site-verification.txt',
+                    $this->eccubeConfig['plugin_data_realdir'].'/SiteKit42/google-site-verification.txt',
                     'google-site-verification: '.$token
                 );
 
@@ -155,11 +155,11 @@ class ConfigController extends AbstractController
                 $yaml = Yaml::dump([
                     'site_kit_google_site_verification' => [
                         'path' => '/'.$token,
-                        'controller' => 'Plugin\SiteKit\Controller\Admin\ConfigController::siteVerification',
+                        'controller' => 'Plugin\SiteKit42\Controller\Admin\ConfigController::siteVerification',
                     ]
                 ]);
                 $filesystem->dumpFile(
-                    $this->eccubeConfig['plugin_data_realdir'].'/SiteKit/routes.yaml',
+                    $this->eccubeConfig['plugin_data_realdir'].'/SiteKit42/routes.yaml',
                     $yaml);
 
                 $cacheUtil->clearCache();
@@ -213,7 +213,7 @@ class ConfigController extends AbstractController
 
     /**
      * @Route("/%eccube_admin_route%/cube_kit/callback", name="site_kit_callback")
-     * @Template("@SiteKit/admin/config.twig")
+     * @Template("@SiteKit42/admin/config.twig")
      *
      * @param Request $request
      *

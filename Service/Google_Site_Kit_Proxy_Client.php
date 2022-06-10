@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Service;
+namespace Plugin\SiteKit42\Service;
 
 use Exception;
 use Google\Auth\HttpHandler\HttpHandlerFactory;

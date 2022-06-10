@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit;
+namespace Plugin\SiteKit42;
 
 
 use Eccube\Plugin\AbstractPluginManager;
@@ -24,7 +24,7 @@ class PluginManager extends AbstractPluginManager
     public function install(array $meta, ContainerInterface $container)
     {
         $fs = new Filesystem();
-        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit/routes.yaml';
+        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit42/routes.yaml';
         if (!$fs->exists($routeYaml)) {
             $fs->dumpFile($routeYaml, '');
         }
@@ -33,7 +33,7 @@ class PluginManager extends AbstractPluginManager
     public function update(array $meta, ContainerInterface $container)
     {
         $fs = new Filesystem();
-        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit/routes.yaml';
+        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit42/routes.yaml';
         if (!$fs->exists($routeYaml)) {
             $fs->dumpFile($routeYaml, '');
         }
