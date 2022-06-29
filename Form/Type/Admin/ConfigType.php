@@ -1,8 +1,8 @@
 <?php
 
-namespace Plugin\SiteKit\Form\Type\Admin;
+namespace Plugin\SiteKit42\Form\Type\Admin;
 
-use Plugin\SiteKit\Entity\Config;
+use Plugin\SiteKit42\Entity\Config;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;

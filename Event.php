@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\SiteKit;
+namespace Plugin\SiteKit42;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

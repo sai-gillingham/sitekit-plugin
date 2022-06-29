@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Entity;
+namespace Plugin\SiteKit42\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Annotation\EntityExtension;
@@ -22,7 +22,7 @@ use Eccube\Annotation\EntityExtension;
 trait MemberTrait
 {
     /**
-     * @ORM\OneToOne(targetEntity="Plugin\SiteKit\Entity\IdToken", mappedBy="Member")
+     * @ORM\OneToOne(targetEntity="Plugin\SiteKit42\Entity\IdToken", mappedBy="Member")
      */
     private $IdToken;
 

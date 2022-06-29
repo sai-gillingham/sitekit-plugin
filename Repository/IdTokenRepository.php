@@ -10,21 +10,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Repository;
+namespace Plugin\SiteKit42\Repository;
 
 
 use Eccube\Entity\Member;
 use Eccube\Repository\AbstractRepository;
-use Plugin\SiteKit\Entity\IdToken;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use Plugin\SiteKit42\Entity\IdToken;
+use Doctrine\Persistence\ManagerRegistry;
 
 class IdTokenRepository extends AbstractRepository
 {
     /**
      * IdTokenRepository constructor.
-     * @param RegistryInterface $registry
+     * @param ManagerRegistry $registry
      */
-    public function __construct(RegistryInterface $registry)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, IdToken::class);
     }

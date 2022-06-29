@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Service;
+namespace Plugin\SiteKit42\Service;
 
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -55,7 +55,7 @@ class SiteKitClientFactory
         ]);
         $client->setAccessType('offline');
         $client->setRedirectUri(
-            $router->generate('site_kit_admin_config', [], UrlGeneratorInterface::ABSOLUTE_URL)
+            $router->generate('site_kit42_admin_config', [], UrlGeneratorInterface::ABSOLUTE_URL)
         );
 
         /** @var Member $Member */

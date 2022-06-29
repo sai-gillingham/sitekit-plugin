@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Entity;
+namespace Plugin\SiteKit42\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Entity\Member;
@@ -20,7 +20,7 @@ use Eccube\Entity\Member;
  * Class IdToken
  *
  * @ORM\Table(name="plg_site_kit_id_token")
- * @ORM\Entity(repositoryClass="Plugin\SiteKit\Repository\IdTokenRepository")
+ * @ORM\Entity(repositoryClass="Plugin\SiteKit42\Repository\IdTokenRepository")
  */
 class IdToken
 {

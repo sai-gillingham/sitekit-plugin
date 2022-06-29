@@ -8,4 +8,4 @@ EC-CUBE版 Site Kitプラグインです。管理画面にてPageSpeed Insight�
 
 他のプラグインと同様にEC-CUBEの管理画面からインストール可能です。
 
-[オーナーズストアの商品ページはこちら](https://www.ec-cube.net/products/detail.php?product_id=2158)
+[オーナーズストアの商品ページはこちら](https://www.ec-cube.net/products/detail.php?product_id=2399)

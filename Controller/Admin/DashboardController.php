@@ -11,10 +11,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\SiteKit\Controller\Admin;
+namespace Plugin\SiteKit42\Controller\Admin;
 
 use Eccube\Controller\AbstractController;
-use Plugin\SiteKit\Service\Google_Site_Kit_Proxy_Client;
+use Plugin\SiteKit42\Service\Google_Site_Kit_Proxy_Client;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -36,13 +36,13 @@ class DashboardController extends AbstractController
 
     /**
      * @Route("/%eccube_admin_route%/site_kit/dashboard", name="site_kit_dashboard")
-     * @Template("@SiteKit/admin/dashboard.twig")
+     * @Template("@SiteKit42/admin/dashboard.twig")
      */
     public function showGoogleSearchData()
     {
         $Member = $this->getUser();
         if (is_null($Member->getIdToken())) {
-            return $this->redirectToRoute('site_kit_admin_config');
+            return $this->redirectToRoute('site_kit42_admin_config');
         }
 
         $jsonQuery = $this->getJsonFromGoogleSearchData('query');
