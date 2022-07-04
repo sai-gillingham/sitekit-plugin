@@ -58,11 +58,14 @@ class SiteKitClientFactory
             $router->generate('site_kit42_admin_config', [], UrlGeneratorInterface::ABSOLUTE_URL)
         );
 
-        /** @var Member $Member */
-        $Member = $tokenStorage->getToken()->getUser();
-        if ($Member instanceof Member && !is_null($Member->getIdToken())) {
-            $client->setAccessToken($Member->getIdToken()->getIdToken());
-            $client->setTokenCallback([$factory, 'updateAccessToken']);
+        $Token = $tokenStorage->getToken();
+        if ($Token !== null) {
+            /** @var Member $Member */
+            $Member = $Token->getUser();
+            if ($Member instanceof Member && !is_null($Member->getIdToken())) {
+                $client->setAccessToken($Member->getIdToken()->getIdToken());
+                $client->setTokenCallback([$factory, 'updateAccessToken']);
+            }
         }
 
         return $client;
