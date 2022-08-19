@@ -162,7 +162,7 @@
                     <div class="col-8">
                         <h3>パフォーマンス</h3>
                     </div>
-                    <div class="col-4 text-right">
+                    <div class="col-4 text-end">
                         <a href="https://developers.google.com/web/tools/lighthouse#devtools" target="_blank">
                             <button type="button" class="btn btn-ec-regular">
                                 <img style="width: 20px;" src="{{ asset('SiteKit42/assets/lighthouse-logo.svg', 'plugin') }}" alt="google-pagespeed-insights image"> {{ 'Lighthouseのすべてのレポートを確認する'|trans }}
@@ -174,7 +174,7 @@
             <div class="collapse show ec-cardCollapse" id="basicConfig">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6 border-right">
+                        <div class="col-6 border-end">
                             <div id="chart_div_desktop" class="d-flex align-items-center justify-content-center" style="height: 240px;">
                                 <img src="{{ asset('assets/img/loading.gif', 'admin') }}" alt="loading">
                             </div>
@@ -189,7 +189,7 @@
                     <div class="pb-4">
                         <h5>フィールドデータ</h5>
                         <div class="row">
-                            <div class="col-6 border-right">
+                            <div class="col-6 border-end">
                                 <div class="row desktop-init">
                                     <div class="col-12">
                                         <div class="d-flex align-items-center justify-content-center" style="height: 100px;">
@@ -199,7 +199,7 @@
                                 </div>
                                 <div class="row d-none desktop-loaded desktop-field">
                                     <div class="col-6 py-1" id="desktop-field-data-fcp">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Contentful Paint（FCP）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Contentful Paint（FCP）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -209,7 +209,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="desktop-field-data-fid">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Input Delay（FID）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Input Delay（FID）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -219,7 +219,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="desktop-field-data-lcp">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Largest Contentful Paint（LCP）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> Largest Contentful Paint（LCP）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -229,7 +229,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="desktop-field-data-cls">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Cumulative Layout Shift（CLS）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> Cumulative Layout Shift（CLS）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -250,7 +250,7 @@
                                 </div>
                                 <div class="row d-none mobile-loaded mobile-field">
                                     <div class="col-6 py-1" id="mobile-field-data-fcp">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Contentful Paint（FCP）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Contentful Paint（FCP）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -260,7 +260,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="mobile-field-data-fid">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Input Delay（FID）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Input Delay（FID）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -270,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="mobile-field-data-lcp">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Largest Contentful Paint（LCP）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> Largest Contentful Paint（LCP）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -280,7 +280,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 py-1" id="mobile-field-data-cls">
-                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Cumulative Layout Shift（CLS）</span></div>
+                                        <div class="mb-2"><span class="badge">&nbsp;&nbsp;</span><span class="fw-bold"> Cumulative Layout Shift（CLS）</span></div>
                                         <div>
                                             <div class="progress" style="height: 18px;">
                                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"></div>
@@ -296,40 +296,40 @@
                     <div>
                         <h5>ラボデータ</h5>
                         <div class="row">
-                            <div class="col-6 border-right desktop-init">
+                            <div class="col-6 border-end desktop-init">
                                 <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
                                     <img src="{{ asset('assets/img/loading.gif', 'admin') }}" alt="loading">
                                 </div>
                             </div>
-                            <div class="col-6 border-right d-none desktop-loaded">
+                            <div class="col-6 border-end d-none desktop-loaded">
                                 <div class="row">
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-fcp-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Contentful Paint</span>
+                                        <span class="badge" id="desktop-lab-fcp-badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Contentful Paint</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-fcp-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-fcp-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-tti-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Time to Interactive</span>
+                                        <span class="badge" id="desktop-lab-tti-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Time to Interactive</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-tti-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-tti-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-speed-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Speed Index</span>
+                                        <span class="badge" id="desktop-lab-speed-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Speed Index</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-speed-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-speed-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-tbt-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Total Blocking Time</span>
+                                        <span class="badge" id="desktop-lab-tbt-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Total Blocking Time</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-tbt-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-tbt-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-lcp-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Largest Contentful Paint</span>
+                                        <span class="badge" id="desktop-lab-lcp-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Largest Contentful Paint</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-lcp-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-lcp-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="desktop-lab-cls-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Cumulative Layout Shift</span>
+                                        <span class="badge" id="desktop-lab-cls-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Cumulative Layout Shift</span>
                                     </div>
-                                    <div class="col-2 text-right" id="desktop-lab-cls-value"></div>
+                                    <div class="col-2 text-end" id="desktop-lab-cls-value"></div>
                                 </div>
                             </div>
-                            <div class="col-6 border-right mobile-init">
+                            <div class="col-6 border-end mobile-init">
                                 <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
                                     <img src="{{ asset('assets/img/loading.gif', 'admin') }}" alt="loading">
                                 </div>
@@ -337,29 +337,29 @@
                             <div class="col-6">
                                 <div class="row d-none mobile-loaded">
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-fcp-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> First Contentful Paint</span>
+                                        <span class="badge" id="mobile-lab-fcp-badge">&nbsp;&nbsp;</span><span class="fw-bold"> First Contentful Paint</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-fcp-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-fcp-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-tti-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Time to Interactive</span>
+                                        <span class="badge" id="mobile-lab-tti-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Time to Interactive</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-tti-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-tti-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-speed-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Speed Index</span>
+                                        <span class="badge" id="mobile-lab-speed-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Speed Index</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-speed-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-speed-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-tbt-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Total Blocking Time</span>
+                                        <span class="badge" id="mobile-lab-tbt-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Total Blocking Time</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-tbt-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-tbt-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-lcp-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Largest Contentful Paint</span>
+                                        <span class="badge" id="mobile-lab-lcp-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Largest Contentful Paint</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-lcp-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-lcp-value"></div>
                                     <div class="col-4">
-                                        <span class="badge" id="mobile-lab-cls-badge">&nbsp;&nbsp;</span><span class="font-weight-bold"> Cumulative Layout Shift</span>
+                                        <span class="badge" id="mobile-lab-cls-badge">&nbsp;&nbsp;</span><span class="fw-bold"> Cumulative Layout Shift</span>
                                     </div>
-                                    <div class="col-2 text-right" id="mobile-lab-cls-value"></div>
+                                    <div class="col-2 text-end" id="mobile-lab-cls-value"></div>
                                 </div>
                             </div>
                         </div>
@@ -380,7 +380,7 @@
                         <div class="col-8">
                             <h3>アクセス推移（過去28日間）</h3>
                         </div>
-                        <div class="col-4 text-right">
+                        <div class="col-4 text-end">
                             <a href="https://search.google.com/search-console?utm_source=about-page&resource_id={{ ownedSiteUrl }}"
                                target="_blank">
                                 <button type="button" class="btn btn-ec-regular">
@@ -411,7 +411,7 @@
                         <div class="col-8">
                             <h3>キーワード情報（過去28日間）</h3>
                         </div>
-                        <div class="col-4 text-right">
+                        <div class="col-4 text-end">
                             <a href="https://search.google.com/search-console?utm_source=about-page&resource_id={{ ownedSiteUrl }}"
                                target="_blank">
                                 <button type="button" class="btn btn-ec-regular">
@@ -438,21 +438,21 @@
                                     </colgroup>
                                     <thead>
                                     <tr>
-                                        <th class="border-top-0 py-2 text-left">キーワード</th>
-                                        <th class="border-top-0 py-2 text-left">クリック数</th>
-                                        <th class="border-top-0 py-2 text-left">インプレッション</th>
-                                        <th class="border-top-0 py-2 text-left">クリックレート</th>
-                                        <th class="border-top-0 py-2 text-left">平均表示ランク</th>
+                                        <th class="border-top-0 py-2 text-start">キーワード</th>
+                                        <th class="border-top-0 py-2 text-start">クリック数</th>
+                                        <th class="border-top-0 py-2 text-start">インプレッション</th>
+                                        <th class="border-top-0 py-2 text-start">クリックレート</th>
+                                        <th class="border-top-0 py-2 text-start">平均表示ランク</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for row in json_query.rows %}
                                         <tr>
-                                            <td class="align-middle text-left pl-3">{{ row.keys[0] }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.clicks|number_format }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.impressions|number_format }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.ctr }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.position }}</td>
+                                            <td class="align-middle text-start ps-3">{{ row.keys[0] }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.clicks|number_format }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.impressions|number_format }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.ctr }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.position }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -474,7 +474,7 @@
                         <div class="col-8">
                             <h3>ページ情報（過去28日間）</h3>
                         </div>
-                        <div class="col-4 text-right">
+                        <div class="col-4 text-end">
                             <a href="https://search.google.com/search-console?utm_source=about-page&resource_id={{ ownedSiteUrl }}"
                                target="_blank">
                                 <button type="button" class="btn btn-ec-regular">
@@ -501,21 +501,21 @@
                                     </colgroup>
                                     <thead>
                                     <tr>
-                                        <th class="border-top-0 py-2 text-left">ページ</th>
-                                        <th class="border-top-0 py-2 text-left">クリック数</th>
-                                        <th class="border-top-0 py-2 text-left">インプレッション</th>
-                                        <th class="border-top-0 py-2 text-left">クリックレート</th>
-                                        <th class="border-top-0 py-2 text-left">平均表示ランク</th>
+                                        <th class="border-top-0 py-2 text-start">ページ</th>
+                                        <th class="border-top-0 py-2 text-start">クリック数</th>
+                                        <th class="border-top-0 py-2 text-start">インプレッション</th>
+                                        <th class="border-top-0 py-2 text-start">クリックレート</th>
+                                        <th class="border-top-0 py-2 text-start">平均表示ランク</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for row in json_page.rows %}
                                         <tr>
-                                            <td class="align-middle text-left pl-3">{{ row.keys[0] }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.clicks|number_format }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.impressions|number_format }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.ctr }}</td>
-                                            <td class="align-right text-right pl-3">{{ row.position }}</td>
+                                            <td class="align-middle text-start ps-3">{{ row.keys[0] }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.clicks|number_format }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.impressions|number_format }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.ctr }}</td>
+                                            <td class="align-middle text-end ps-3">{{ row.position }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
