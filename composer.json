@@ -1,6 +1,6 @@
 {
   "name": "ec-cube/sitekit42",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Site Kit プラグイン",
   "type": "eccube-plugin",
   "require": {
