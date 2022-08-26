@@ -50,6 +50,9 @@ class DashboardController extends AbstractController
         $jsonDate = $this->getJsonFromGoogleSearchData('date', null);
 
         $arrayResponse = json_decode($jsonDate, true);
+        if (!array_key_exists('rows', $arrayResponse)) {
+            $arrayResponse['rows'] = [];
+        }
 
         $arrayDate = array_map(function ($row) {
             $array[] = $row['keys'][0];
@@ -90,6 +93,9 @@ class DashboardController extends AbstractController
     public function formatJson($responseBody)
     {
         $arrayResponse = json_decode($responseBody, true);
+        if (!array_key_exists('rows', $arrayResponse)) {
+            $arrayResponse['rows'] = [];
+        }
 
         $arrayResponse['rows'] = array_map(function ($row) {
             $row['ctr'] = sprintf('%.2f', round($row['ctr'], 2));
