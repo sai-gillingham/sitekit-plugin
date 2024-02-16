@@ -144,7 +144,7 @@ class Google_Site_Kit_Client extends Google_Client
      *
      * @since 1.0.0
      */
-    public function fetchAccessTokenWithAuthCode($code)
+    public function fetchAccessTokenWithAuthCode($code,$codeVerifier = null)
     {
         if (strlen($code) === 0) {
             throw new InvalidArgumentException('Invalid code');
