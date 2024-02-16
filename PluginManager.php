@@ -15,7 +15,7 @@ namespace Plugin\SiteKit42;
 
 
 use Eccube\Plugin\AbstractPluginManager;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Yaml;
 
@@ -24,7 +24,7 @@ class PluginManager extends AbstractPluginManager
     public function install(array $meta, ContainerInterface $container)
     {
         $fs = new Filesystem();
-        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit42/routes.yaml';
+        $routeYaml = $container->get(\Eccube\Common\EccubeConfig::class)->get('plugin_data_realdir').'/SiteKit42/routes.yaml';
         if (!$fs->exists($routeYaml)) {
             $fs->dumpFile($routeYaml, '');
         }
@@ -33,7 +33,7 @@ class PluginManager extends AbstractPluginManager
     public function update(array $meta, ContainerInterface $container)
     {
         $fs = new Filesystem();
-        $routeYaml = $container->getParameter('plugin_data_realdir').'/SiteKit42/routes.yaml';
+        $routeYaml = $container->get(\Eccube\Common\EccubeConfig::class)->get('plugin_data_realdir').'/SiteKit42/routes.yaml';
         if (!$fs->exists($routeYaml)) {
             $fs->dumpFile($routeYaml, '');
         }
